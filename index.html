@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>plant photo-album</title>
+  </head>
+  <style>
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      position: relative;
+      overflow: hidden;
+      /* aspect-ratio: 1 / 1; */
+    }
+
+    li img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* fill | contain | cover | none | scale-down */
+    }
+  </style>
+  <body>
+    <main>
+      <ul></ul>
+    </main>
+  </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", async () => {
+      const getData = async () => {
+        const res = await fetch(`./data/images.json`);
+        const data = await res.json();
+        return data;
+      };
+
+      const { updated_at, images } = await getData();
+
+      const ul = document.querySelector("ul");
+
+      for (let i = 0; i < images.length; i++) {
+        const newLi = document.createElement("li");
+        const newImg = document.createElement("img");
+
+        const { url, taken_at, title, alt } = images[i];
+
+        const iso = `${taken_at.split(" ")[0].replaceAll(":", "-")}T${
+          taken_at.split(" ")[1]
+        }`; // "2025-01-11T09:01:39"
+
+        const millisecond = new Date(iso).getTime(); // 1736586099000
+
+        const transformation = "w_200,q_30,f_auto";
+        newImg.src = url.replace("/upload/", `/upload/${transformation}/`);
+
+        newImg.setAttribute("loading", "lazy");
+        newImg.setAttribute(
+          "data-time",
+          new Date(millisecond).toLocaleString()
+        );
+        newImg.setAttribute("title", title);
+        newImg.setAttribute("alt", alt);
+
+        newLi.appendChild(newImg);
+        ul.appendChild(newLi);
+      }
+
+      console.log(new Date(updated_at).toLocaleString());
+    });
+  </script>
+</html>

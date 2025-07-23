@@ -1,4 +1,13 @@
 {
-  "updated_at": "2025-07-23T07:40:58.531Z",
-  "images": []
+  "updated_at": "2025-07-23T07:42:41.552Z",
+  "images": [
+    {
+      "public_id": "IMG_5823_swu79t",
+      "url": "https://res.cloudinary.com/dy9el6ozw/image/upload/v1753256504/IMG_5823_swu79t.jpg",
+      "created_at": "2025-07-23T07:41:44+00:00",
+      "taken_at": null,
+      "title": null,
+      "alt": null
+    }
+  ]
 }

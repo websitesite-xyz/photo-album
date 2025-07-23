@@ -1,21 +1,4 @@
 {
-  "updated_at": "2025-07-23T08:02:15.638Z",
-  "images": [
-    {
-      "public_id": "버드콜_1_m5xwur",
-      "url": "https://res.cloudinary.com/dy9el6ozw/image/upload/v1753257285/%E1%84%87%E1%85%A5%E1%84%83%E1%85%B3%E1%84%8F%E1%85%A9%E1%86%AF_1_m5xwur.jpg",
-      "created_at": "2025-07-23T07:54:45+00:00",
-      "taken_at": null,
-      "title": null,
-      "alt": null
-    },
-    {
-      "public_id": "IMG_5823_swu79t",
-      "url": "https://res.cloudinary.com/dy9el6ozw/image/upload/v1753256504/IMG_5823_swu79t.jpg",
-      "created_at": "2025-07-23T07:41:44+00:00",
-      "taken_at": null,
-      "title": null,
-      "alt": null
-    }
-  ]
+  "updated_at": "2025-07-23T12:30:20.297Z",
+  "images": []
 }
